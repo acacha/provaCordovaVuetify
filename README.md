@@ -17,4 +17,8 @@ I utilitzar atriubut to a "v-list-tile"
         :to="{path: child.path }"
 > 
 
+# Environment
+
+https://vue-loader.vuejs.org/en/workflow/production.html
+
 # CONFIGURACIó LAYOUT PRINCIPAL (APP SHELL) i RUTES
