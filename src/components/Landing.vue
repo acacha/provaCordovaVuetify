@@ -11,13 +11,27 @@
                     </blockquote>
                 </v-flex>
                 <v-flex class="text-xs-center" mt-5>
-                    <v-btn to="/register">Register</v-btn>
-                    <v-btn to="/login">Login</v-btn>
+                    <template v-if="logged">
+                        <v-btn to="/tasks">Home</v-btn>
+                    </template>
+                    <template v-else>
+                        <v-btn to="/register">Register</v-btn>
+                        <v-btn to="/login">Login</v-btn>
+                    </template>
+
                 </v-flex>
             </v-layout>
         </v-container>
     </v-app>
 </template>
 <script>
-  export default {}
+  import { mapGetters } from 'vuex'
+
+  export default {
+    computed: {
+      ...mapGetters([
+        'logged'
+      ])
+    }
+  }
 </script>

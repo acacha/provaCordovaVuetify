@@ -6,5 +6,8 @@ export default {
   },
   [ types.USER ] (state, user) {
     state.user = user
+  },
+  [ types.TOKEN ] (state, token) {
+    state.token = token
   }
 }

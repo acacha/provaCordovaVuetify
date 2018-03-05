@@ -38,6 +38,7 @@ export default new Router({
         },
         {
           path: 'tasks',
+          alias: 'home',
           name: 'Tasks',
           component: Tasks,
           meta: {

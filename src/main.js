@@ -8,18 +8,27 @@ import store from './store'
 
 import App from './App'
 import router from './router'
+import * as mutations from './store/mutation-types'
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 
 if (window.localStorage) {
   let token = window.localStorage.getItem('token') || 'null'
-
   if (token) {
     // store.setTokenAction(token)
+    store.commit(mutations.TOKEN, token)
+    store.commit(mutations.LOGGED, true)
     axios.defaults.headers.common['authorization'] = `Bearer ${token}`
   }
 }
+
+console.log('USERNAME:')
+console.log(process.env.USERNAME)
+console.log('PASSWORD:')
+console.log(process.env.PASSWORD)
+console.log('API_URL:')
+console.log(process.env.API_URL)
 
 /* eslint-disable no-new */
 new Vue({
